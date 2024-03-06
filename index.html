@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="styles/index.css" media="screen">
+
+<script>
+var subjectObject = {
+  "Front-end": {
+    "HTML": ["Links", "Images", "Tables", "Lists"],
+    "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
+    "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]    
+  },
+  "Back-end": {
+    "PHP": ["Variables", "Strings", "Arrays"],
+    "SQL": ["SELECT", "UPDATE", "DELETE"]
+  }
+}
+
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+
+</head>
+<body>
+   <div class="navbar">
+<div class="topnav">  
+<button class="tablink" onclick="openPage('Home', this, 'red')"id="defaultOpen"><a href="pages/home.html">Home</a></button>
+<button class="tablink" onclick="openPage('About', this, 'green')" id="defaultOpen"><a href="pages/About.html">About</a></button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')"id="defaultOpen"><a href="pages/Contact.html">Contact</a></button>
+<button class="tablink" onclick="openPage('Portfolio', this, 'orange')"id="defaultOpen"><a href="pages/Sign_up.html">Create An Account</a></button>
+
+   <div class="dropdown">
+  <button class="dropbtn" onclick="openPage('Portfolio', this, 'orange')"id="defaultOpen"><a href="#">Blog</a><i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="pages/Blog.html">Leave a comment</a>
+    <a href="#">get latest from or stores</a>
+    <a href="#">Earn points with our card select</a>
+  </div>
+  </div> 
+</div>
+</div>
+
+ <div class="header">
+      <h1 style="color: red" style="size: 15"><marquee direction="cross" height="20" width="1140" bgcolor="white"> Juma Grivin Muyaka</marquee></h1>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card"><img src="gallary/children3.JPG"style="width: 32.5%"><img src="gallary/children2.JPG"style="width: 32.5%"><img src="gallary/children3.JPG"style="width: 32.5%">
+      <h2> SHOP EVERYTHING UNDER ONE ROOF</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+        <p>quality products at an affordable price, Choose Your Favorite Product and Order Now! Most Popular</p> 
+    </div>
+
+    <div class="card"><img src="gallary/g2/faded1.JPG"style="width: 32.5%"><img src="gallary/g2/faded5.JPG"style="width: 32.5%"><img src="gallary/faded3.JPG"style="width: 32.5%">
+      <h2>SHOP EVERYTHING UNDER ONE ROOF</h2>
+      <div class="fakeimg" style="height:70px; width: 100%">
+        <p>Quality products at an affordable price, Choose Your Favorite Product and Order Now! Most Popular</p>
+      </div>
+    </div>
+      <div class="card"><img src="gallary/shoes2.JPG" style="width: 32.5%"><img src="gallary/g2/shoe3.JPG"  style="width: 32.5%"><img src="gallary/g2/shoe5.JPG"  style="width: 32.5%">
+      <h2>SHOP EVERYTHING UNDER ONE ROOF</h2>
+      <div class="fakeimg" style="height:70px; width: 100%">
+        <p>Quality Shoes at an affordable price, Choose Your Favorite Product and Order Now! Most Popular</p>
+      </div>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Children's wears</h2>
+      <div class="fakeimg" style="height:70px;">
+        <img src="gallary/children1.JPG" style="height:90px; width: 230px ">
+         <p>Quality and affordable Gents wears at an affordable price, </p>
+      </div>
+      <div class="fakeimg" style="height:70px;">
+      </div>
+
+        <div class="fakeimg">
+         <img src="gallary/children2.JPG" style="height: 90px; width: 230px ">
+         <p>Quality products at an affordable price</p>
+        </div>
+
+         <div class="fakeimg">
+            <img src="gallary/men1.JPG" style="height: 90px; width: 100% ">
+            <p>Quality products at an affordable price</p>
+         </div>
+          <div class="fakeimg">
+            <img src="gallary/g2/ladies1.JPG" style="height: 90px width: 200Px; ">
+
+                 <p>Make your choice here</p>
+                   <form name="form1" id="form1" action="/action_page.php">
+                       Subjects: <select name="subject" id="subject">
+                       <option value="" selected="selected">Select subject</option>
+                      </select>
+                        <br><br>
+                        Topics: <select name="topic" id="topic">
+                         <option value="" selected="selected">Please select subject first</option>
+                      </select>
+                         <br><br>
+                        Chapters: <select name="chapter" id="chapter">
+                        <option value="" selected="selected">Please select topic first</option>
+                      </select>
+                       <br><br>
+                     <input type="submit" value="Submit">
+                   </form>
+                    <form>
+                        <p>Click where you belong</p>
+                      <input type="radio" id="html" name="fav_language" value="Male">
+                      <label for="html">Male</label><br>
+                      <input type="radio" id="css" name="fav_language" value="female">
+                      <label for="css">female</label><br>
+                       <input type="radio" id="javascript" name="fav_language" value="children">
+                      <label for="javascript">Children</label>
+                    </form>
+               
+                </div>
+              </div>
+
+         </div>
+    </div> 
+  </div>
+
+          <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+// Close the dropdown if the user clicks outside of it
+
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+<div class="footer">
+     <p>www.inbotque.com</p> 
+</div>
+   
+  </footer>
+</html>
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../styles/blog.css" media="screen">
+
+</style>
+</head>
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <h1 style="color: rgba();">You Have an account?</h1>
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="home.html" class="active">INTERACT WITH US HERE</a>
+  </div>
+ 
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+/* chart messeges*/
+</script>
+<body>
+
+<h2>leave a comment</h2>
+<p>this is where your interact with us all the time.</p>
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+      <button type="submit"><a class="active" href="..\index.html">Submit</a></button>
+    </div>
+  </form>
+</div>
+
+   <div>
+<h2>Chat Messages</h2>
+
+<div class="container">
+  <img src="../gallary/both2.JPG" alt="Avatar" style="width:100%;">
+  <p>Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="../gallary/both2.JPG" alt="Avatar" class="right" style="width:100%;">
+  <p>Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="../gallary/both2.JPG" alt="Avatar" style="width:100%;">
+  <p>Sweet! So, what do you wanna do today?</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+  <img src="../gallary/both2.JPG" alt="Avatar" class="right" style="width:100%;">
+  <p>Nah, go for shopping</p>
+  <span class="time-left">11:05</span>
+</div>
+
+</body>
+</html>
+
+   </div>
+</body>
+<div class="about-section"></div>
+</html>
